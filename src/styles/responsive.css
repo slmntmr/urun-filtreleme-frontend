@@ -1,0 +1,98 @@
+/* Container sınıfı: Ürün listesi konteynerini tam ekran genişliğinde tutmak ve arka plan rengi eklemek için */
+.container {
+  max-width: 100%; /* Konteynerin ekranın tamamını kaplamasını sağlar */
+  padding: 0; /* Varsayılan padding'i kaldırır, böylece yanlarda boşluk kalmaz */
+  margin: 0 auto; /* Konteyneri ortalar */
+  background-color: lightgray; /* Arka plana açık gri bir renk ekler */
+}
+
+/* Row sınıfı: Satır içinde sütunlar arasındaki yatay boşlukları sıfırlamak için */
+.row {
+  margin-left: 0; /* Sol boşluğu sıfırlar */
+  margin-right: 0; /* Sağ boşluğu sıfırlar */
+}
+
+/* Col sınıfı: Sütunlar arasında boşluk bırakmamak için padding'i kaldırır */
+.col {
+  padding-left: 0; /* Sol boşluğu kaldırır */
+  padding-right: 0; /* Sağ boşluğu kaldırır */
+}
+
+/* Filtre ve Arama Çubukları Konteyneri */
+.filter-container {
+  display: flex; /* Yan yana dizilim */
+  flex-wrap: wrap; /* Küçük ekranlarda satırları sarar */
+  gap: 1.5rem; /* Arama ve filtre kutuları arasında boşluk ekler */
+  margin-bottom: 1.5rem; /* Ürün listesi ile filtreler arasında boşluk bırakır */
+}
+
+/* Kart tasarımı: Kart bileşenlerinin görünümünü ayarlar */
+.card {
+  width: 100%; /* Kartların tam genişlikte görünmesini sağlar */
+  max-width: 600px; /* Detay sayfasındaki kart için maksimum genişlik */
+  margin: 0 auto; /* Kartları ortalar */
+  transition: transform 0.3s ease-in-out; /* Hover etkisi için yumuşak bir geçiş sağlar */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Hover sırasında kartın biraz büyümesini sağlar */
+}
+
+/* Yıldız görünümü: Yıldız değerlendirme stilini ayarlar */
+.stars {
+  color: #f5c518; /* Altın rengi kullanarak yıldızlara dikkat çekici bir görünüm verir */
+  font-size: 1.2rem; /* Yıldızların boyutunu artırır */
+}
+
+/* Yorum başlıkları ve metin: Yorum başlığı ve metin için stil ayarları */
+.review-title {
+  font-size: 1.1rem; /* Başlık boyutunu artırır */
+  font-weight: bold; /* Başlığı kalın yapar */
+}
+
+.review-comment {
+  color: #666; /* Yorum metnini açık gri renkte yapar */
+  font-style: italic; /* Yorumları italik yapar */
+}
+
+/* Mobil ekranlar için medya sorgusu: Kart başlığı ve metin boyutlarını mobil cihazlara uyumlu hale getirir */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 1.2rem; /* Kart başlığının boyutunu mobilde artırır */
+  }
+  .card-text {
+    font-size: 1rem; /* Kart metin boyutunu mobilde artırır */
+  }
+
+  .filter-container {
+    flex-direction: column; /* Mobilde filtrelerin alt alta dizilmesi */
+  }
+}
+
+/* Küçük boyutlu giriş alanları: Arama ve filtreleme kutularının daha şık görünmesi için temel ayar */
+.small-input {
+  font-size: 0.9rem; /* Giriş alanı metnini biraz küçültür */
+  padding: 0.5rem; /* Giriş alanına boşluk ekler */
+  border: 1px solid #ddd; /* İnce, açık gri bir kenarlık ekler */
+  border-radius: 4px; /* Kenarları hafif yuvarlatır */
+  transition: box-shadow 0.3s ease; /* Hover ve focus için gölge geçiş efekti */
+}
+
+/* Hover ve focus durumunda giriş alanlarına gölge ekleyerek dikkat çeker */
+.small-input:focus,
+.small-input:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+  border-color: #007bff; /* Kenar rengi mavi olur */
+}
+
+/* Yarı genişlikli giriş alanı: Arama ve filtreleme alanlarının %50 genişlikte görünmesini sağlar */
+.half-width {
+  width: 50%; /* Alan genişliğini %50 olarak ayarlar */
+  margin: 0 auto; /* Alanları ortalar */
+}
+
+/* Carousel için stil: Görsel öğelerin yükseklik sınırını ayarlamak ve düzgün görünmesini sağlamak için */
+.carousel img {
+  max-height: 400px; /* Maksimum yükseklik belirler */
+  object-fit: cover; /* Görselin tam olarak kapsamasını sağlar, taşan kısımlar kesilir */
+}
